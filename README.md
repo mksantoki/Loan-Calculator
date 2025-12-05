@@ -8,7 +8,7 @@ A beautiful, feature-rich loan calculator web application that generates a compl
 
 ## 🌐 Live Demo
 
-👉 **[View Live Demo](https://YOUR_USERNAME.github.io/loan-calculator/)**
+👉 **[View Live Demo](https://mksantoki.github.io/Loan-Calculator/)**
 
 ## ✨ Features
 
