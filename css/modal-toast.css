@@ -1,0 +1,280 @@
+/* ============================================
+   MODAL & TOAST COMPONENTS
+   Vault Finance Design System v3.0
+   ============================================ */
+
+/* ===== MODAL ===== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--space-4);
+}
+
+.modal-content {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 0;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+}
+
+.modal-header h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition: all var(--duration-fast) ease;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 0 var(--space-5) var(--space-4);
+}
+
+.modal-body p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.modal-body .form-group {
+  margin-bottom: var(--space-4);
+}
+
+.modal-body .form-group label {
+  margin-bottom: var(--space-2);
+}
+
+.modal-body input {
+  height: var(--input-height-sm);
+  font-size: var(--text-sm);
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.modal-footer .btn {
+  height: var(--btn-height-sm);
+  padding: 0 var(--space-5);
+  font-size: var(--text-sm);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Modal icon header (for confirmations) */
+.modal-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-5) auto var(--space-4);
+}
+
+.modal-icon.warning {
+  background: hsla(40, 92%, 52%, 0.10);
+  color: var(--warning);
+}
+
+.modal-icon.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.modal-icon.success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.modal-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Centered modal variant */
+.modal-content.centered {
+  text-align: center;
+}
+
+.modal-content.centered .modal-footer {
+  justify-content: center;
+}
+
+/* ===== TOAST ===== */
+
+.toast-container {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 360px;
+  width: calc(100% - var(--space-8));
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  line-height: var(--leading-snug);
+  position: relative;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.toast-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast-title {
+  font-weight: var(--weight-semibold);
+  margin-bottom: 2px;
+  font-size: var(--text-sm);
+}
+
+.toast-message {
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+}
+
+.toast-close {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition: all var(--duration-fast) ease;
+}
+
+.toast-close:hover {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+}
+
+/* Toast variants — left accent bar */
+.toast.success {
+  border-left: 3px solid var(--success);
+}
+
+.toast.success .toast-icon {
+  color: var(--success);
+}
+
+.toast.error {
+  border-left: 3px solid var(--danger);
+}
+
+.toast.error .toast-icon {
+  color: var(--danger);
+}
+
+.toast.warning {
+  border-left: 3px solid var(--warning);
+}
+
+.toast.warning .toast-icon {
+  color: var(--warning);
+}
+
+.toast.info {
+  border-left: 3px solid var(--info);
+}
+
+.toast.info .toast-icon {
+  color: var(--info);
+}
+
+/* Toast progress bar */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent-500);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  transition: width linear;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 480px) {
+  .toast-container {
+    left: var(--space-3);
+    right: var(--space-3);
+    max-width: none;
+    width: auto;
+  }
+
+  .modal-content {
+    max-width: none;
+    margin: var(--space-3);
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+  }
+}

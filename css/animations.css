@@ -1,0 +1,194 @@
+/* ============================================
+   ANIMATIONS — Keyframes, Transitions, Effects
+   Vault Finance Design System v3.0
+   ============================================ */
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes collapseOut {
+  to {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes spinOnce {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== ENTRY ANIMATIONS ===== */
+
+.entry-row {
+  animation: slideInFromLeft 250ms var(--ease-out) backwards;
+}
+
+.entry-row.removing {
+  animation: collapseOut 200ms var(--ease-in) forwards;
+}
+
+/* ===== RESULTS CASCADE (faster, subtler) ===== */
+
+.results-section.visible {
+  animation: fadeSlideUp 400ms var(--ease-out);
+}
+
+.results-section.visible .summary-card {
+  animation: fadeSlideUp 300ms var(--ease-out) backwards;
+}
+
+.results-section.visible .summary-card:nth-child(1) { animation-delay: 0ms; }
+.results-section.visible .summary-card:nth-child(2) { animation-delay: 40ms; }
+.results-section.visible .summary-card:nth-child(3) { animation-delay: 80ms; }
+.results-section.visible .summary-card:nth-child(4) { animation-delay: 120ms; }
+.results-section.visible .summary-card:nth-child(5) { animation-delay: 160ms; }
+.results-section.visible .summary-card:nth-child(6) { animation-delay: 200ms; }
+.results-section.visible .summary-card:nth-child(7) { animation-delay: 240ms; }
+
+.results-section.visible .term-section {
+  animation: fadeSlideUp 300ms var(--ease-out) backwards;
+  animation-delay: 200ms;
+}
+
+.results-section.visible .charts-section {
+  animation: fadeSlideUp 300ms var(--ease-out) backwards;
+  animation-delay: 300ms;
+}
+
+.results-section.visible .table-container {
+  animation: fadeSlideUp 300ms var(--ease-out) backwards;
+  animation-delay: 400ms;
+}
+
+/* ===== SKELETON / SHIMMER ===== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-primary) 0%,
+    var(--bg-overlay) 50%,
+    var(--bg-primary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+  color: transparent !important;
+}
+
+/* ===== MODAL ANIMATIONS ===== */
+
+.modal-overlay {
+  animation: fadeIn 150ms ease;
+}
+
+.modal-overlay.closing {
+  animation: fadeIn 120ms ease reverse forwards;
+}
+
+.modal-content {
+  animation: scaleIn 200ms var(--ease-out);
+}
+
+.modal-overlay.closing .modal-content {
+  animation: scaleIn 120ms var(--ease-in) reverse forwards;
+}
+
+/* ===== TOAST ANIMATIONS ===== */
+
+.toast {
+  animation: toastSlideIn 250ms var(--ease-out);
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.toast.exiting {
+  animation: toastSlideOut 150ms var(--ease-in) forwards;
+}
+
+@keyframes toastSlideOut {
+  to {
+    opacity: 0;
+    transform: translateX(100%) scale(0.96);
+  }
+}
+
+/* ===== CALC BUTTON SPIN ===== */
+
+.input-calc-btn.spinning svg {
+  animation: spinOnce 350ms var(--ease-out);
+}
+
+/* ===== HOVER GLOW EFFECT ===== */
+
+.hover-glow {
+  position: relative;
+}
+
+.hover-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--duration-normal) ease;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    hsla(170, 75%, 41%, 0.06) 0%,
+    transparent 60%
+  );
+}
+
+.hover-glow:hover::after {
+  opacity: 1;
+}
