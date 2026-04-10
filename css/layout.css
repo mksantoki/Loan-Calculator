@@ -1,0 +1,239 @@
+/* ============================================
+   LAYOUT — Container, Grid, Responsive
+   Vault Finance Design System v3.0
+   ============================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--container-padding);
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* === Form Grids === */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.form-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.form-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+/* === Summary Bento Grid === */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+/* === Analytics Dashboard Grids === */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.charts-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: minmax(300px, auto);
+  gap: var(--space-5);
+}
+
+.chart-box.area-box {
+  grid-column: 1 / -1;
+}
+
+/* === Term Grid === */
+.term-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+/* === Entries Container === */
+.entries-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+/* === Entry Row === */
+.entry-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr auto;
+  gap: var(--space-4);
+  align-items: end;
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  transition: border-color var(--duration-fast) ease;
+}
+
+.entry-row:hover {
+  border-color: var(--border-default);
+}
+
+/* === Action Buttons === */
+.action-buttons-wrapper {
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.action-buttons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: var(--space-4);
+}
+
+.add-btn-container {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* === Table Layout === */
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-primary);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.table-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Tablet - 1024px */
+@media (max-width: 1024px) {
+  .term-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet - 900px */
+@media (max-width: 900px) {
+  .form-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .charts-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .term-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .form-grid {
+    gap: var(--space-5);
+  }
+
+  .entry-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .add-btn-container {
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-4);
+  }
+
+  .table-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: var(--space-2);
+  }
+
+  .term-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+/* Mobile Small - 500px */
+@media (max-width: 500px) {
+  .form-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .term-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile XS - 380px */
+@media (max-width: 380px) {
+  .container {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+}

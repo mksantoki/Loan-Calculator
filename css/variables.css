@@ -1,0 +1,212 @@
+/* ============================================
+   DESIGN TOKENS — Loan Calculator v3.0
+   "Vault Finance" Design System
+   
+   Color Philosophy:
+   - Primary Accent: Teal (#1AB394) — Growth, trust, prosperity
+   - Surfaces: Deep navy undertones — Stability, sophistication  
+   - Semantic colors: Signal-only (green=positive, red=negative)
+   - 60-30-10 Rule: 60% neutral, 30% secondary, 10% accent
+   ============================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* === Primary Surfaces (Deep Navy Undertone) === */
+  --bg-canvas:    hsl(228, 35%, 6%);
+  --bg-primary:   hsl(226, 28%, 10%);
+  --bg-elevated:  hsl(224, 24%, 14%);
+  --bg-overlay:   hsl(222, 20%, 18%);
+  --bg-hover:     hsl(222, 18%, 22%);
+
+  /* === Accent — Vault Teal === */
+  --accent-50:  hsl(170, 60%, 95%);
+  --accent-100: hsl(170, 62%, 85%);
+  --accent-200: hsl(170, 65%, 72%);
+  --accent-300: hsl(170, 68%, 58%);
+  --accent-400: hsl(170, 72%, 48%);
+  --accent-500: hsl(170, 75%, 41%);
+  --accent-600: hsl(170, 80%, 34%);
+  --accent-700: hsl(170, 80%, 28%);
+
+  /* === Semantic Colors (Signal-Only) === */
+  --success:      hsl(155, 68%, 40%);
+  --success-soft:  hsla(155, 68%, 40%, 0.10);
+  --success-glow:  hsla(155, 68%, 40%, 0.20);
+
+  --danger:       hsl(2, 68%, 56%);
+  --danger-soft:   hsla(2, 68%, 56%, 0.10);
+  --danger-glow:   hsla(2, 68%, 56%, 0.20);
+
+  --warning:      hsl(40, 92%, 52%);
+  --warning-soft:  hsla(40, 92%, 52%, 0.10);
+
+  --info:         hsl(215, 85%, 58%);
+  --info-soft:     hsla(215, 85%, 58%, 0.10);
+  --info-glow:     hsla(215, 85%, 58%, 0.20);
+
+  --purple:       hsl(252, 72%, 60%);
+  --purple-soft:   hsla(252, 72%, 60%, 0.10);
+  --purple-glow:   hsla(252, 72%, 60%, 0.20);
+
+  --pink:         hsl(335, 65%, 56%);
+  --pink-soft:     hsla(335, 65%, 56%, 0.10);
+
+  --cyan:         hsl(195, 85%, 46%);
+  --cyan-soft:     hsla(195, 85%, 46%, 0.10);
+
+  /* === Text Hierarchy (WCAG AA Compliant) === */
+  --text-primary:   hsl(210, 20%, 95%);
+  --text-secondary: hsl(224, 12%, 58%);
+  --text-tertiary:  hsl(224, 10%, 40%);
+  --text-inverse:   hsl(228, 35%, 6%);
+
+  /* === Borders & Dividers === */
+  --border-subtle:  hsla(224, 15%, 28%, 0.45);
+  --border-default: hsla(224, 15%, 32%, 0.60);
+  --border-strong:  hsla(224, 15%, 40%, 0.75);
+  --border-accent:  hsla(170, 75%, 41%, 0.30);
+
+  /* === Gradients === */
+  --gradient-accent:       linear-gradient(135deg, hsl(170, 75%, 41%) 0%, hsl(162, 80%, 35%) 100%);
+  --gradient-accent-hover: linear-gradient(135deg, hsl(170, 72%, 48%) 0%, hsl(162, 78%, 42%) 100%);
+  --gradient-surface:      linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-primary) 100%);
+  --gradient-glow:         radial-gradient(ellipse 60% 50% at 50% -10%, hsla(170, 75%, 41%, 0.08) 0%, transparent 60%);
+  --gradient-danger:       linear-gradient(135deg, hsl(2, 68%, 56%) 0%, hsl(2, 72%, 48%) 100%);
+  --gradient-success:      linear-gradient(135deg, hsl(155, 68%, 40%) 0%, hsl(155, 72%, 32%) 100%);
+
+  /* === Typography === */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+
+  /* Type Scale (Major Third — 1.250) */
+  --text-2xs: 0.625rem;   /* 10px */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-xl:  1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+
+  /* Font Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold: 800;
+
+  /* Line Heights */
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* Letter Spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.08em;
+
+  /* === Spacing (4px base grid) === */
+  --space-0:  0;
+  --space-1:  0.25rem;   /* 4px  */
+  --space-2:  0.5rem;    /* 8px  */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-7:  2rem;      /* 32px */
+  --space-8:  2.5rem;    /* 40px */
+  --space-9:  3rem;      /* 48px */
+  --space-10: 4rem;      /* 64px */
+  --space-11: 5rem;      /* 80px */
+  --space-12: 6rem;      /* 96px */
+
+  /* === Border Radius === */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* === Shadows (Layered for depth) === */
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.12);
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.10);
+  --shadow-md:  0 4px 8px rgba(0, 0, 0, 0.18), 0 2px 4px rgba(0, 0, 0, 0.10);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.22), 0 4px 8px rgba(0, 0, 0, 0.10);
+  --shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.28), 0 8px 16px rgba(0, 0, 0, 0.12);
+  --shadow-accent:    0 4px 16px hsla(170, 75%, 41%, 0.20);
+  --shadow-accent-lg: 0 8px 32px hsla(170, 75%, 41%, 0.28);
+  --shadow-danger:    0 4px 16px hsla(2, 68%, 56%, 0.20);
+
+  /* === Transitions === */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:    120ms;
+  --duration-normal:  200ms;
+  --duration-slow:    350ms;
+  --duration-slower:  500ms;
+
+  /* === Z-Index Scale === */
+  --z-base:     1;
+  --z-dropdown: 10;
+  --z-sticky:   20;
+  --z-overlay:  30;
+  --z-modal:    40;
+  --z-toast:    50;
+
+  /* === Glassmorphism === */
+  --glass-bg:     rgba(18, 24, 41, 0.60);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-blur:   blur(16px) saturate(180%);
+
+  /* === Container === */
+  --container-max: 1200px;
+  --container-padding: var(--space-6);
+
+  /* === Component Heights === */
+  --input-height: 48px;
+  --input-height-sm: 40px;
+  --btn-height: 48px;
+  --btn-height-sm: 36px;
+}
+
+/* ============================================
+   LIGHT THEME — "Dawn Vault"
+   ============================================ */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-canvas:   hsl(225, 22%, 97%);
+  --bg-primary:  hsl(0, 0%, 100%);
+  --bg-elevated: hsl(0, 0%, 100%);
+  --bg-overlay:  hsl(225, 16%, 94%);
+  --bg-hover:    hsl(225, 14%, 91%);
+
+  --text-primary:   hsl(225, 30%, 12%);
+  --text-secondary: hsl(224, 12%, 44%);
+  --text-tertiary:  hsl(224, 10%, 58%);
+  --text-inverse:   hsl(0, 0%, 100%);
+
+  --border-subtle:  hsla(224, 15%, 78%, 0.40);
+  --border-default: hsla(224, 15%, 72%, 0.55);
+  --border-strong:  hsla(224, 15%, 60%, 0.65);
+  --border-accent:  hsla(170, 75%, 41%, 0.25);
+
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md:  0 4px 8px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.10), 0 8px 16px rgba(0, 0, 0, 0.05);
+  --shadow-accent: 0 4px 16px hsla(170, 75%, 41%, 0.14);
+
+  --glass-bg:     rgba(255, 255, 255, 0.70);
+  --glass-border: rgba(0, 0, 0, 0.05);
+
+  --gradient-glow: radial-gradient(ellipse 60% 50% at 50% -10%, hsla(170, 75%, 41%, 0.05) 0%, transparent 60%);
+}

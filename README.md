@@ -1,217 +1,296 @@
+<div align="center">
+
 # 💰 Loan Calculator
 
-A beautiful, feature-rich loan calculator web application that generates a complete amortization schedule with support for **multiple disbursements**, **EMI changes**, **part payments**, **interest rate changes**, **custom EMI deduction dates**, and **PDF export**.
+### A Professional-Grade EMI & Amortization Tool
 
-![Static Site](https://img.shields.io/badge/Type-Static_Site-blue)
-![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Now-1ab394?style=for-the-badge&logoColor=white)](https://mksantoki.github.io/Loan-Calculator/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted_On-GitHub_Pages-222?style=for-the-badge&logo=github)](https://mksantoki.github.io/Loan-Calculator/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-## 🌐 Live Demo
+**A free, zero-login loan calculator with phased disbursements, floating rate changes, part payments, interactive analytics, and PDF export — all running client-side in your browser.**
 
-👉 **[View Live Demo](https://mksantoki.github.io/Loan-Calculator/)**
+<br/>
 
-## ✨ Features
+<img src="assets/hero-dark.png" alt="Loan Calculator — Hero View" width="100%"/>
 
-- 📄 **PDF Export** - Export complete loan report with input data and amortization schedule
-- 💾 **Auto-Save to Browser** - All data is automatically saved to browser storage
-- 💸 **Multiple Loan Disbursements** - Add loan amounts as they are disbursed on different dates
-- 📅 **EMI Deduction Day** - Set the exact day of month when EMI is deducted (1st, 5th, 10th, 15th, etc.)
-- 🔄 **EMI Changes** - Modify your monthly EMI amount on specific dates
-- 📆 **Date-wise Part Payments** - Add extra payments on specific dates to reduce principal faster
-- 📈 **Dynamic Interest Rate Changes** - Apply new interest rates on specific dates
-- 📊 **Complete Amortization Schedule** - Month-by-month breakdown until loan closure
-- 📉 **Loan Analytics** - Visual charts for payment breakdown and balance over time
-- ℹ️ **Loan Term Analysis** - Track original term, actual term, completed, remaining, and saved time
-- 🎨 **Beautiful Dark UI** - Modern, responsive design with smooth animations
-- 💹 **Real-time Calculations** - Instant results with detailed summary
-
-## 🚀 Getting Started
-
-### Option 1: Use Online (Recommended)
-
-Simply visit the **[Live Demo](https://YOUR_USERNAME.github.io/loan-calculator/)** - no installation needed!
-
-### Option 2: Run Locally
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/loan-calculator.git
-   cd loan-calculator
-   ```
-
-2. **Open in browser**
-   
-   Simply open `index.html` in your web browser. No server required!
-
-   Or use a simple HTTP server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js (npx)
-   npx serve
-   ```
-
-3. **Open your browser**
-   ```
-   http://localhost:8000
-   ```
-
-## 🌍 Deploy to GitHub Pages
-
-1. **Create a GitHub repository** and push your code
-
-2. **Enable GitHub Pages:**
-   - Go to your repository on GitHub
-   - Click **Settings** → **Pages**
-   - Under "Source", select **Deploy from a branch**
-   - Select **main** branch and **/ (root)** folder
-   - Click **Save**
-
-3. **Your site will be live at:**
-   ```
-   https://YOUR_USERNAME.github.io/REPO_NAME/
-   ```
-
-## 📖 Usage
-
-### Loan Disbursements
-
-Loans are often disbursed in multiple installments. Add each disbursement with its date:
-
-1. Click **"Add Disbursement"**
-2. Select the **Disbursement Date**
-3. Enter the **Disbursement Amount**
-4. Add multiple disbursements as needed
-5. The total disbursed amount is shown in real-time
-
-**Note:** The first disbursement date becomes the loan start date.
-
-### Initial Loan Settings
-
-1. **Initial Interest Rate** - Annual interest rate (%)
-2. **Initial Monthly EMI** - Starting monthly payment amount
-3. **EMI Deduction Day** - Select the day of month when your bank deducts EMI
-4. **Original Loan Term** - Bank sanctioned tenure (for comparison)
-
-### EMI Deduction Day (Important!)
-
-The EMI deduction day affects interest calculation:
-- Interest is calculated from one EMI date to the next
-- For the first month, pro-rata interest is calculated from disbursement date to first EMI date
-- This ensures accurate interest calculations based on your actual bank deduction schedule
-
-### EMI Changes (Optional)
-
-Change your EMI amount on specific dates (e.g., when you get a salary hike):
-
-1. Click **"Add EMI Change"**
-2. Select the **Effective Date**
-3. Enter the **New EMI Amount**
-
-### Part Payments (Optional)
-
-Part payments are one-time extra payments made towards the principal:
-
-1. Click **"Add Part Payment"**
-2. Select the **Payment Date**
-3. Enter the **Part Payment Amount**
-
-### Interest Rate Changes (Optional)
-
-Interest rates may change during the loan tenure:
-
-1. Click **"Add Rate Change"**
-2. Select the **Effective Date**
-3. Enter the **New Interest Rate**
-
-### Calculate & Export
-
-- Click **"Calculate"** to generate the amortization schedule
-- Click **"Export PDF"** to download a complete loan report
-
-## 📁 Project Structure
-
-```
-loan-calculator/
-├── index.html      # Complete app (HTML + CSS + JS)
-├── README.md       # Documentation
-├── LICENSE         # MIT License
-└── .gitignore      # Git ignore file
-```
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Vanilla HTML, CSS, JavaScript (No frameworks!)
-- **Storage**: Browser localStorage
-- **PDF Generation**: jsPDF + jsPDF-AutoTable (CDN)
-- **Charts**: Chart.js (CDN)
-- **Fonts**: Google Fonts (DM Sans, Playfair Display)
-
-## 📊 Calculation Logic
-
-### Monthly Interest
-```
-Monthly Interest = Remaining Balance × (Annual Rate / 12 / 100)
-```
-
-### First Month Pro-rata Interest
-```
-Days = EMI Deduction Day - Disbursement Day
-First Month Interest = Principal × (Annual Rate / 365 / 100) × Days
-```
-
-### Principal Payment
-```
-Principal = EMI Payment + Part Payment - Monthly Interest
-```
-
-### New Balance
-```
-New Balance = Previous Balance + New Disbursement - Principal Paid
-```
-
-## 🎨 UI Features
-
-- **Dark Theme** with amber/gold accents
-- **Responsive Design** for all screen sizes
-- **Smooth Animations** for better UX
-- **Auto-save Indicator** shows when data is saved
-- **Info Tooltips** explaining each metric
-- **Visual Indicators**:
-  - 🟣 Purple highlight for disbursement months
-  - 🩷 Pink highlight for EMI change months
-  - 🔵 Blue highlight for rate change months
-  - 🟢 Green highlight for part payment months
-
-## 💾 Data Persistence
-
-All your entered data is **automatically saved** to your browser's localStorage. When you revisit the page, all your data will be restored automatically.
-
-**Note:** Data is stored locally in your browser and is not sent to any server.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Design inspired by modern fintech applications
-- Icons from Heroicons
-- Fonts from Google Fonts
-- PDF generation powered by jsPDF
-- Charts powered by Chart.js
+</div>
 
 ---
 
-Made with ❤️ for better loan management
+## ✨ Why This Calculator?
+
+Most online EMI calculators are basic — enter principal, rate, tenure, get an EMI number. Real-world loans are far more complex:
+
+- 🏗️ **Construction loans** disburse in phases, not all at once
+- 📉 **Floating rates** change multiple times over 20 years
+- 💸 **Part payments** can slash your interest by lakhs
+- 📊 **You need analytics**, not just a number
+
+This tool handles **all of it** — and shows you the exact financial impact of every decision.
+
+---
+
+## 🖼️ Screenshots
+
+<details open>
+<summary><strong>📊 Analytics Dashboard (Dark Mode)</strong></summary>
+<br/>
+<img src="assets/analytics-dashboard.png" alt="Loan Analytics — Insight Cards and Term Analysis" width="100%"/>
+</details>
+
+<details>
+<summary><strong>📈 Interactive Charts</strong></summary>
+<br/>
+<img src="assets/charts-bento.png" alt="Charts — Doughnut, Stacked Bar & Gradient Area" width="100%"/>
+</details>
+
+<details>
+<summary><strong>📋 Amortization Schedule</strong></summary>
+<br/>
+<img src="assets/amortization-table.png" alt="Amortization Table with Remaining Term" width="100%"/>
+</details>
+
+<details>
+<summary><strong>☀️ Light Mode</strong></summary>
+<br/>
+<img src="assets/light-mode.png" alt="Light Mode Theme" width="100%"/>
+</details>
+
+---
+
+## 🚀 Features
+
+### Core Calculator Engine
+| Feature | Description |
+|---------|-------------|
+| **Phased Disbursements** | Add multiple disbursement dates and amounts (e.g., for construction-linked loans) |
+| **Floating Rate Changes** | Schedule interest rate changes at any future date |
+| **EMI Changes** | Modify your EMI amount at any point during the loan |
+| **Part Payments** | Model lump-sum payments and see the exact impact on interest & tenure |
+| **Auto EMI Calculation** | Standard `P × r × (1+r)^n / ((1+r)^n - 1)` formula with one click |
+
+### Analytics Dashboard
+| Metric | What It Tells You |
+|--------|-------------------|
+| **Cost of Borrowing** | Interest paid per ₹100 borrowed — instant cost clarity |
+| **Effective Interest Rate** | Total interest as a percentage of total amount paid |
+| **Prepayment Savings** | Exact ₹ saved by making early part payments + time saved |
+| **Rate Change Savings** | ₹ saved (or lost) compared to if the rate never changed |
+
+### Interactive Charts
+| Chart | Purpose |
+|-------|---------|
+| **Payment Breakdown** | Doughnut chart showing Principal vs Interest ratio |
+| **Interest vs Principal per Year** | Stacked bar chart revealing how early EMIs are front-loaded with interest |
+| **Balance Tracking Curve** | Gradient area chart showing the "crossing point" where principal overtakes balance |
+
+### Amortization Schedule
+| Column | Description |
+|--------|-------------|
+| **Month / EMI Date** | Sequential month number and exact payment date |
+| **Rate / EMI** | Current interest rate and EMI amount (highlights changes) |
+| **Disbursement** | Any new loan tranche disbursed that month |
+| **Principal / Interest** | How your EMI splits between debt and cost |
+| **Part Payment** | Any additional lump-sum payment made |
+| **Remaining Term** | Dynamic NPER-based projection — drops instantly on events |
+| **Balance** | Outstanding principal after all payments |
+
+### Additional Features
+- 🌗 **Dark / Light Theme** — Premium design system with smooth transitions
+- 👤 **Multi-User Profiles** — Save different loan scenarios per user (LocalStorage)
+- 📤 **Export to PDF** — Full amortization schedule with jsPDF + AutoTable
+- 💾 **Import / Export Data** — JSON-based loan data backup and restore
+- 📱 **Fully Responsive** — Works seamlessly on mobile, tablet, and desktop
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    A[index.html] --> B[app.js]
+    B --> C[calculator-engine.js]
+    B --> D[charts.js]
+    B --> E[ui-components.js]
+    B --> F[storage.js]
+    B --> G[pdf-export.js]
+    B --> H[utils.js]
+
+    C -->|Schedule + Summary| B
+    D -->|Chart.js Rendering| I[Pie · Bar · Area]
+    E -->|Modals · Toasts · Theme| A
+    F -->|LocalStorage| J[(Browser Storage)]
+    G -->|jsPDF + AutoTable| K[PDF Download]
+
+    style A fill:#1ab394,color:#fff,stroke:#119974
+    style C fill:#d44c4a,color:#fff,stroke:#b83c3a
+    style D fill:#5b8cd4,color:#fff,stroke:#4470b0
+```
+
+### How the Calculation Engine Works
+
+```mermaid
+flowchart LR
+    A[User Inputs] --> B{Engine Loop}
+    B -->|Each Month| C[Apply Disbursements]
+    C --> D[Check Rate Changes]
+    D --> E[Check EMI Changes]
+    E --> F[Calculate Interest]
+    F --> G[Apply Part Payments]
+    G --> H[Calculate NPER]
+    H --> I[Push to Schedule]
+    I -->|Balance > 0| B
+    I -->|Balance = 0| J[Generate Summary]
+    J --> K[Render UI]
+```
+
+### Remaining Term — NPER Logic
+
+```mermaid
+flowchart TD
+    START[Month N] --> CHECK{Event this month?}
+    CHECK -->|No Event| DEC[Remaining = Previous - 1]
+    CHECK -->|Rate Change| CALC[Recalculate via NPER]
+    CHECK -->|Part Payment| CALC
+    CHECK -->|EMI Change| CALC
+    CALC --> SET[Set new baseline]
+    SET --> NEXT[Month N+1]
+    DEC --> NEXT
+```
+
+> The dynamic `NPER` formula: `n = log(1 / (1 - (r × PV) / PMT)) / log(1 + r)` where `r` = monthly rate, `PV` = outstanding balance, and `PMT` = current EMI.
+
+---
+
+## 📂 Project Structure
+
+```
+Loan Calculator/
+├── index.html              # Single-page application entry point
+├── README.md               # This file
+├── assets/                 # Screenshots and static resources
+│   ├── hero-dark.png
+│   ├── analytics-dashboard.png
+│   ├── charts-bento.png
+│   ├── amortization-table.png
+│   └── light-mode.png
+├── css/
+│   ├── variables.css       # Design tokens (colors, spacing, fonts)
+│   ├── reset.css           # CSS reset and base styles
+│   ├── layout.css          # Grid systems and responsive layout
+│   ├── components.css      # UI components (cards, buttons, inputs)
+│   ├── sections.css        # Page sections (header, calculator, results)
+│   ├── animations.css      # Micro-animations and transitions
+│   └── modal-toast.css     # Modal dialogs and toast notifications
+└── js/
+    ├── app.js              # Main application controller (811 lines)
+    ├── calculator-engine.js # Pure calculation logic + NPER
+    ├── charts.js           # Chart.js rendering (Doughnut, Bar, Area)
+    ├── ui-components.js    # Theme toggle, modals, toast system
+    ├── storage.js          # LocalStorage CRUD for user profiles
+    ├── pdf-export.js       # PDF generation with jsPDF
+    └── utils.js            # Currency formatting, date helpers
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Structure** | HTML5 (Semantic) | Single-page application |
+| **Styling** | Vanilla CSS | Custom design system with CSS variables |
+| **Logic** | Vanilla JavaScript (ES Modules) | Zero-dependency calculation engine |
+| **Charts** | [Chart.js](https://www.chartjs.org/) | Doughnut, Stacked Bar, and Area charts |
+| **PDF** | [jsPDF](https://github.com/parallax/jsPDF) + [AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) | Professional PDF export |
+| **Fonts** | [Inter](https://fonts.google.com/specimen/Inter) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) | Typography |
+| **Hosting** | GitHub Pages | Static site deployment |
+
+> **Zero build tools. No npm. No bundler.** Open `index.html` and it works.
+
+---
+
+## 🚀 Getting Started
+
+### Option 1: Live Demo
+Visit the hosted version: **[🔗 Live Demo](https://mksantoki.github.io/Loan-Calculator/)**
+
+### Option 2: Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/loan-calculator.git
+cd loan-calculator
+
+# Serve with any static server
+python3 -m http.server 8090
+# or
+npx serve .
+```
+
+Then open `http://localhost:8090` in your browser.
+
+### Option 3: Direct File
+Simply open `index.html` in any modern browser — no server required for basic usage.
+
+---
+
+## 📖 Usage Guide
+
+### Step 1 — Set Up Your Loan
+1. **Create a User Profile** to save your data
+2. **Add Disbursement(s)** — Date and amount for each loan tranche
+3. **Set Interest Rate** and **Original Bank Term**
+4. **Auto-calculate EMI** or enter a custom amount
+
+### Step 2 — Model Scenarios
+- 📉 **Add Rate Changes** — Simulate floating rate adjustments
+- 💸 **Add Part Payments** — See how lump sums reduce your tenure and interest
+- ✏️ **Add EMI Changes** — Model what happens if you increase/decrease your EMI
+
+### Step 3 — Analyze Results
+- 📊 **Loan Analytics** — Review the 4 key insight metrics
+- 📈 **Charts** — Visualize payment patterns, balance curves, and yearly breakdowns
+- 📋 **Amortization Table** — Scroll through every single EMI with dynamic Remaining Term
+- 📤 **Export PDF** — Download a professional PDF report
+
+---
+
+## 🎨 Design System
+
+The UI follows a custom **fintech-grade design system** with:
+
+- **Dark Mode Default** — Deep navy surfaces (`#0b0e1a`) with teal accents (`#1ab394`)
+- **Light Mode** — Clean whites with subtle blue-gray tones
+- **Monospace Numbers** — JetBrains Mono for financial figures
+- **Micro-Animations** — Smooth transitions on hover, cards, and theme switch
+- **Accessibility** — Proper contrast ratios and semantic HTML
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for smarter financial planning**
+
+*For educational purposes only. Results are approximate and should not be considered financial advice.*
+
+</div>
